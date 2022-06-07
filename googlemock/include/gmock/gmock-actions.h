@@ -446,13 +446,9 @@ class PolymorphicAction {
 
    private:
     Impl impl_;
-
-    GTEST_DISALLOW_ASSIGN_(MonomorphicImpl);
   };
 
   Impl impl_;
-
-  GTEST_DISALLOW_ASSIGN_(PolymorphicAction);
 };
 
 // Creates an Action from its implementation and returns it.  The
@@ -593,13 +589,9 @@ class ReturnAction {
    private:
     bool performed_;
     const std::shared_ptr<R> wrapper_;
-
-    GTEST_DISALLOW_ASSIGN_(Impl);
   };
 
   const std::shared_ptr<R> value_;
-
-  GTEST_DISALLOW_ASSIGN_(ReturnAction);
 };
 
 // Implements the ReturnNull() action.
@@ -660,13 +652,9 @@ class ReturnRefAction {
 
    private:
     T& ref_;
-
-    GTEST_DISALLOW_ASSIGN_(Impl);
   };
 
   T& ref_;
-
-  GTEST_DISALLOW_ASSIGN_(ReturnRefAction);
 };
 
 // Implements the polymorphic ReturnRefOfCopy(x) action, which can be
@@ -707,13 +695,9 @@ class ReturnRefOfCopyAction {
 
    private:
     T value_;
-
-    GTEST_DISALLOW_ASSIGN_(Impl);
   };
 
   const T value_;
-
-  GTEST_DISALLOW_ASSIGN_(ReturnRefOfCopyAction);
 };
 
 // Implements the polymorphic DoDefault() action.
@@ -740,8 +724,6 @@ class AssignAction {
  private:
   T1* const ptr_;
   const T2 value_;
-
-  GTEST_DISALLOW_ASSIGN_(AssignAction);
 };
 
 #if !GTEST_OS_WINDOWS_MOBILE
@@ -763,8 +745,6 @@ class SetErrnoAndReturnAction {
  private:
   const int errno_;
   const T result_;
-
-  GTEST_DISALLOW_ASSIGN_(SetErrnoAndReturnAction);
 };
 
 #endif  // !GTEST_OS_WINDOWS_MOBILE
@@ -869,13 +849,9 @@ class IgnoreResultAction {
         OriginalFunction;
 
     const Action<OriginalFunction> action_;
-
-    GTEST_DISALLOW_ASSIGN_(Impl);
   };
 
   const A action_;
-
-  GTEST_DISALLOW_ASSIGN_(IgnoreResultAction);
 };
 
 template <typename InnerAction, size_t... I>
